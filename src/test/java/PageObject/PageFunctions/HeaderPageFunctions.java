@@ -2,6 +2,7 @@ package PageObject.PageFunctions;
 
 import PageObject.PageElements.HeaderPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -52,7 +53,7 @@ public class HeaderPageFunctions extends HeaderPage {
         return list;
     }
 
-    public List<String> expandedItemAddresses(WebElement element) throws InterruptedException {
+    public List<String> expandedItemAddresses(WebElement element) {
         List<WebElement> expandedElements = element.findElements(By.tagName("a"));
         List<String> list = new ArrayList<>();
         for (WebElement item : expandedElements) {

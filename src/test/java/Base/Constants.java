@@ -4,22 +4,31 @@ public class Constants {
 
     //URL constants
     public static String BASE_URL = "https://strypes.eu/";
+
     public static String SUBSCRIBE_URL = BASE_URL.concat("#subscribe");
+
     public static String ABOUT_URL = BASE_URL.concat("about/");
     public static String CLIENTS_URL = BASE_URL.concat("clients/");
     public static String PARTNERS_URL = BASE_URL.concat("partners/");
     public static String LEADERSHIP_URL = BASE_URL.concat("leadership/");
 
-    //Button name constants
-    public static String SUBSCRIBE = "Subscribe";
-    public static String HOME_BTN = "Home";
-    public static String ABOUT_BTN = "About";
-    public static String SERVICES_BTN = "Services";
-    public static String CAREERS_BTN = "Careers";
-    public static String PODCAST_BTN = "Podcast";
-    public static String RESOURCES_BTN = "Podcast";
-    public static String CONTACTS_BTN = "Contacts";
-    public static String NEARSURANCE_BTN = "Nearsurance";
+    public static String SERVICES_URL = BASE_URL.concat("services/");
+    public static String WORK_MODEL_URL = BASE_URL.concat("services/our-model/");
+
+    public static String VACANCIES_URL = BASE_URL.concat("careers/positions/");
+    public static String WORKING_URL = BASE_URL.concat("careers/work-environment/");
+    public static String INTERSHIP_URL = BASE_URL.concat("careers/internship/");
+
+    public static String PODCAST_URL = BASE_URL.concat("podcast/");
+
+    public static String BLOG_URL = BASE_URL.concat("blog/");
+    public static String WHITEPAPERS_URL = BASE_URL.concat("resources/whitepapers/");
+    public static String VIDEOS_URL = BASE_URL.concat("resources/videos/");
+    public static String MEDIA_URL = BASE_URL.concat("resources/media-kit/");
+
+    public static String CONTACTS_URL = BASE_URL.concat("contacts/");
+
+    public static String NEARSURANCE_URL = BASE_URL.concat("nearsurance/");
 
     //About selections
     public static String ABOUT = "About us";
