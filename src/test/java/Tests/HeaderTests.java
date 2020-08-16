@@ -1,44 +1,24 @@
 package Tests;
 
+import Base.BaseTest;
 import Base.Constants;
 import PageObject.PageFunctions.HeaderPageFunctions;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.tools.ant.taskdefs.WaitFor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-public class HeaderTests {//extends BaseTest {
-
-    public WebDriver driver;
-    private final String url = Constants.BASE_URL;
-
-    @BeforeEach
-    public void setupTest() {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        driver = new ChromeDriver(options);
-        driver.get(url);
-    }
-
-    @AfterEach
-    public void teardown() {
-        driver.close();
-        driver.quit();
-    }
+public class HeaderTests extends BaseTest {
 
     @Test
     public void headerIsVisibleByDefault() {
@@ -198,5 +178,14 @@ public class HeaderTests {//extends BaseTest {
         String expectedColour = "text-orange";
         String itemColour = header.nearsuranceMenuItem.findElement(By.tagName("a")).getAttribute("class");
         Assert.assertEquals(itemColour, expectedColour);
+    }
+
+    @Test
+    public void headerIsAlwaysVisible() {
+        HeaderPageFunctions header = new HeaderPageFunctions(driver);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("javascript:window.scrollBy(0,document.body.scrollHeight)");
+        Assert.assertTrue(header.footer.isDisplayed());
+        Assert.assertTrue(header.isHeaderDisplayed());
     }
 }

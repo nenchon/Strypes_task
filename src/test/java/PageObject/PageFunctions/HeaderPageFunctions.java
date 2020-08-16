@@ -2,13 +2,11 @@ package PageObject.PageFunctions;
 
 import PageObject.PageElements.HeaderPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class HeaderPageFunctions extends HeaderPage {
 
